@@ -128,7 +128,7 @@ export interface PluginPackage {
  *
  * The type T is the type of the plugin options.
  */
-export interface PluginBase<T, ServerApplicationState, RequestApplicationState> {
+export interface PluginBase<T, ServerApplicationState = any, RequestApplicationState = any> {
     /**
      * (required) the registration function with the signature async function(server, options) where:
      * * server - the server object with a plugin-specific server.realm.
@@ -3129,7 +3129,7 @@ export interface ServerRegisterOptions {
  *
  * The type parameter T is the type of the plugin configuration options.
  */
-export interface ServerRegisterPluginObject<T, ServerApplicationState, RequestApplicationState> extends ServerRegisterOptions {
+export interface ServerRegisterPluginObject<T, ServerApplicationState = any, RequestApplicationState = any> extends ServerRegisterOptions {
     /**
      * a plugin object.
      */
@@ -3140,7 +3140,7 @@ export interface ServerRegisterPluginObject<T, ServerApplicationState, RequestAp
     options?: T;
 }
 
-export interface ServerRegisterPluginObjectArray<T, U, V, W, X, Y, Z, ServerApplicationState, RequestApplicationState>
+export interface ServerRegisterPluginObjectArray<T, U, V, W, X, Y, Z, ServerApplicationState = any, RequestApplicationState = any>
     extends Array<ServerRegisterPluginObject<T, ServerApplicationState, RequestApplicationState>
     | ServerRegisterPluginObject<U, ServerApplicationState, RequestApplicationState>
     | ServerRegisterPluginObject<V, ServerApplicationState, RequestApplicationState>
